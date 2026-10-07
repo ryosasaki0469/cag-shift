@@ -92,17 +92,36 @@
       <use href="#snow"   x="130" y="118" width="44" height="44"/>
       <!-- 湯気 -->
       <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-        <path d="M84 76 q-3 -4 0 -8 t0 -8"/><path d="M94 74 q-3 -4 0 -8 t0 -8"/><path d="M104 76 q-3 -4 0 -8 t0 -8"/>
+        <path d="M84 70 q-3 -4 0 -8 t0 -8"/><path d="M95 68 q-3 -4 0 -8 t0 -8"/><path d="M106 70 q-3 -4 0 -8 t0 -8"/>
       </g>
       <!-- 鉄板 -->
-      <path fill="currentColor" d="M82 82 H170 L118 119 H30Z"/>
-      <path fill="currentColor" opacity=".55" d="M30 119 H118 V124 H30Z"/>
-      <g fill="none" stroke="var(--bg,#0d0d0d)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M70 103 C70 94 86 91 100 93 C112 95 113 103 104 107 C92 112 70 111 70 103Z"/>
-        <path d="M78 101 C84 97 92 98 98 100 M80 105 C88 103 96 104 102 103 M86 107 C92 107 97 106 101 105"/>
-        <circle cx="128" cy="92" r="4.5"/><circle cx="143" cy="91" r="5"/><circle cx="156" cy="90" r="3.2"/>
-        <circle cx="52" cy="112" r="3.2"/><circle cx="62" cy="109" r="3"/><circle cx="116" cy="97" r="3"/>
-        <path d="M34 119 L82 82" opacity=".0"/>
+      <path fill="currentColor" opacity=".45" d="M120 126 L172 74 V79 L120 131Z"/>
+      <path fill="currentColor" opacity=".6" d="M26 126 H120 V131 H26Z"/>
+      <path fill="currentColor" d="M82 74 H172 L120 126 H26Z"/>
+      <path fill="none" stroke="var(--bg,#0d0d0d)" stroke-width=".7" opacity=".7" d="M82 74 H172 L120 126 H26Z" transform="translate(99 100) scale(.93 .88) translate(-99 -100)"/>
+      <g fill="none" stroke="var(--bg,#0d0d0d)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <!-- 肉 -->
+        <path id="steak" fill="var(--bg,#0d0d0d)" stroke="none" transform="translate(1.8 2.6)" d="M76 106 C74 98 84 94 96 94 C108 94 118 97 117 103 C116 108 108 109 104 112 C98 116 82 114 76 106Z"/>
+        <path fill="currentColor" stroke-width="2" d="M76 106 C74 98 84 94 96 94 C108 94 118 97 117 103 C116 108 108 109 104 112 C98 116 82 114 76 106Z"/>
+        <g stroke-width=".9">
+          <path d="M81 104 c1 -4 7 -5 8 -1 c1 3 -3 5 -5 3"/>
+          <path d="M92 99 c3 -3 8 -1 7 2 c-1 3 -5 2 -5 0"/>
+          <path d="M103 102 c1 -3 7 -3 8 0 c0 3 -4 4 -6 2"/>
+          <path d="M86 109 c4 2 8 1 11 -1 M98 109 c4 0 7 -2 9 -4"/>
+        </g>
+        <!-- 薄切り -->
+        <g transform="translate(79 86) rotate(-12)">
+          <rect x="-10" y="-5" width="20" height="10" rx="3"/>
+          <path d="M-7 -2.5 H7 M-7 0 H7 M-7 2.5 H7" stroke-width=".8"/>
+        </g>
+        <!-- 丸い野菜・楕円の野菜 -->
+        <circle cx="113" cy="86" r="5.2"/><circle cx="113" cy="86" r="2.3" stroke-width=".8"/>
+        <ellipse cx="129" cy="86" rx="5.2" ry="7"/><ellipse cx="129" cy="86.5" rx="2.8" ry="4.4" stroke-width=".8"/>
+        <!-- 手前の小さな野菜 -->
+        <circle cx="52" cy="115" r="4"/><circle cx="52" cy="115" r="1.5" stroke-width=".8"/>
+        <circle cx="64" cy="116" r="3.6"/><circle cx="64" cy="116" r="1.4" stroke-width=".8"/>
+        <circle cx="62" cy="103" r="3.6"/><circle cx="62" cy="103" r="1.4" stroke-width=".8"/>
+        <ellipse cx="124" cy="108" rx="4.2" ry="2.5" transform="rotate(-22 124 108)"/>
       </g>
     </symbol>
   </defs>
