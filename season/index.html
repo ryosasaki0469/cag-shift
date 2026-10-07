@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:wght@500;600&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -38,53 +38,79 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <linearGradient id="foil" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9cf8f"/><stop offset=".5" stop-color="#c9a45c"/><stop offset="1" stop-color="#a98440"/>
+    </linearGradient>
     <symbol id="sakura" viewBox="-20 -20 40 40">
-      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">
-        <path id="petal" d="M0 0 C-7 -6 -7 -14 -3 -17 L0 -14 L3 -17 C7 -14 7 -6 0 0Z"/>
-        <use href="#petal" transform="rotate(72)"/>
-        <use href="#petal" transform="rotate(144)"/>
-        <use href="#petal" transform="rotate(216)"/>
-        <use href="#petal" transform="rotate(288)"/>
+      <g id="sakura-petals" fill="currentColor">
+        <path id="petal" d="M0 0 C-6.5 -4 -8.5 -13 -5 -18.5 L0 -15 L5 -18.5 C8.5 -13 6.5 -4 0 0Z"/>
+        <use href="#petal" transform="rotate(72)"/><use href="#petal" transform="rotate(144)"/>
+        <use href="#petal" transform="rotate(216)"/><use href="#petal" transform="rotate(288)"/>
+      </g>
+      <g stroke="var(--bg,#0d0d0d)" stroke-width=".9" stroke-linecap="round" fill="none">
+        <path id="pv" d="M0 -3 L0 -9"/>
+        <use href="#pv" transform="rotate(72)"/><use href="#pv" transform="rotate(144)"/>
+        <use href="#pv" transform="rotate(216)"/><use href="#pv" transform="rotate(288)"/>
       </g>
     </symbol>
     <symbol id="maple" viewBox="-20 -20 40 40">
-      <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"
-        d="M0 -17 L4 -9 L11 -11 L8 -3 L16 0 L8 5 L9 10 L2 8 L0 17 L-2 8 L-9 10 L-8 5 L-16 0 L-8 -3 L-11 -11 L-4 -9Z"/>
+      <path fill="currentColor" d="M0 -18 L3.5 -9 L11 -13 L9 -4 L17 -3 L10 3 L12 9 L4 7 L1 10 L1 18 L-1 18 L-1 10 L-4 7 L-12 9 L-10 3 L-17 -3 L-9 -4 L-11 -13 L-3.5 -9Z"/>
+      <path fill="none" stroke="var(--bg,#0d0d0d)" stroke-width=".9" stroke-linecap="round" d="M0 11 V-13 M0 8 L10 -8 M0 8 L-10 -8 M0 8 L13 0 M0 8 L-13 0"/>
     </symbol>
     <symbol id="snow" viewBox="-20 -20 40 40">
-      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-        <g id="arm"><path d="M0 0 V-16 M0 -10 L-4 -14 M0 -10 L4 -14"/></g>
-        <use href="#arm" transform="rotate(60)"/><use href="#arm" transform="rotate(120)"/>
-        <use href="#arm" transform="rotate(180)"/><use href="#arm" transform="rotate(240)"/>
-        <use href="#arm" transform="rotate(300)"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path id="sarm" d="M0 0 V-18 M0 -6 L-4.5 -10.5 M0 -6 L4.5 -10.5 M0 -12 L-4 -16 M0 -12 L4 -16"/>
+        <use href="#sarm" transform="rotate(60)"/><use href="#sarm" transform="rotate(120)"/>
+        <use href="#sarm" transform="rotate(180)"/><use href="#sarm" transform="rotate(240)"/>
+        <use href="#sarm" transform="rotate(300)"/>
+        <circle r="3"/>
       </g>
     </symbol>
     <symbol id="leaf" viewBox="-20 -20 40 40">
-      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-12 12 C-12 -6 2 -16 14 -14 C16 -2 8 12 -12 12Z"/>
-        <path d="M-12 12 L8 -8"/>
-      </g>
+      <path fill="currentColor" d="M-13 13 C-14 -6 2 -17 15 -15 C17 -2 8 13 -13 13Z"/>
+      <path fill="none" stroke="var(--bg,#0d0d0d)" stroke-width="1" stroke-linecap="round" d="M-13 13 L9 -9 M-3 3 L-3 -6 M3 -2 L9 -2"/>
     </symbol>
-    <symbol id="emblem" viewBox="0 0 120 120">
-      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">
-        <path d="M18 62 L60 44 L102 62 L60 82Z"/>
-        <path d="M26 62 L60 48 L94 62 L60 78Z" opacity=".5"/>
-        <path d="M18 62 V68 L60 88 V82 M102 62 V68 L60 88"/>
-        <ellipse cx="50" cy="63" rx="7" ry="3.5"/>
-        <ellipse cx="68" cy="60" rx="8" ry="4"/>
-        <ellipse cx="60" cy="68" rx="6" ry="3"/>
+    <symbol id="emblem" viewBox="0 0 200 200">
+      <!-- 唐草の枠 -->
+      <mask id="halo" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+        <rect width="200" height="200" fill="#fff"/>
+        <circle cx="36" cy="62" r="23" fill="#000"/><circle cx="128" cy="32" r="22" fill="#000"/>
+        <circle cx="64" cy="160" r="22" fill="#000"/><circle cx="152" cy="140" r="23" fill="#000"/>
+      </mask>
+      <g fill="none" stroke="currentColor" stroke-linecap="round" mask="url(#halo)">
+        <path id="frame" stroke-width="1.8" d="M70 26 C110 18 172 48 176 98 C180 140 160 172 130 176 C80 190 28 160 26 110 C22 70 40 38 70 26Z"/>
+        <use href="#frame" stroke-width="1" transform="translate(100 100) scale(.9) translate(-100 -100)"/>
+        <defs><path id="curl" stroke-width="1.7" d="M-9 3 C-9 -6 4 -9 8 -2 C11 5 3 10 -2 6 C-5 3 -2 -1 1 0"/></defs>
+        <use href="#curl" transform="translate(70 26) rotate(-20) scale(1.3)"/>
+        <use href="#curl" transform="translate(176 98) rotate(80) scale(1.3)"/>
+        <use href="#curl" transform="translate(130 176) rotate(170) scale(1.3)"/>
+        <use href="#curl" transform="translate(26 110) rotate(-100) scale(1.3)"/>
       </g>
-      <use href="#sakura" x="2" y="10" width="30" height="30"/>
-      <use href="#maple"  x="82" y="8"  width="30" height="30"/>
-      <use href="#leaf"   x="4" y="82"  width="30" height="30"/>
-      <use href="#snow"   x="84" y="82" width="30" height="30"/>
+      <use href="#sakura" x="14" y="40" width="44" height="44"/>
+      <use href="#maple"  x="108" y="12" width="40" height="40"/>
+      <use href="#maple"  x="44" y="140" width="40" height="40" transform="rotate(-18 64 160)"/>
+      <use href="#snow"   x="130" y="118" width="44" height="44"/>
+      <!-- 湯気 -->
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M84 76 q-3 -4 0 -8 t0 -8"/><path d="M94 74 q-3 -4 0 -8 t0 -8"/><path d="M104 76 q-3 -4 0 -8 t0 -8"/>
+      </g>
+      <!-- 鉄板 -->
+      <path fill="currentColor" d="M82 82 H170 L118 119 H30Z"/>
+      <path fill="currentColor" opacity=".55" d="M30 119 H118 V124 H30Z"/>
+      <g fill="none" stroke="var(--bg,#0d0d0d)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M70 103 C70 94 86 91 100 93 C112 95 113 103 104 107 C92 112 70 111 70 103Z"/>
+        <path d="M78 101 C84 97 92 98 98 100 M80 105 C88 103 96 104 102 103 M86 107 C92 107 97 106 101 105"/>
+        <circle cx="128" cy="92" r="4.5"/><circle cx="143" cy="91" r="5"/><circle cx="156" cy="90" r="3.2"/>
+        <circle cx="52" cy="112" r="3.2"/><circle cx="62" cy="109" r="3"/><circle cx="116" cy="97" r="3"/>
+        <path d="M34 119 L82 82" opacity=".0"/>
+      </g>
     </symbol>
   </defs>
 </svg>
 
 <header class="site-header" id="top">
   <a class="brand" href="#top" aria-label="Season トップへ">
-    <svg class="brand-mark"><use href="#emblem"/></svg>
+    <svg class="brand-mark" viewBox="0 0 200 200"><use href="#emblem"/></svg>
     <span>Season</span>
   </a>
   <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
@@ -100,7 +126,7 @@
 <main>
   <section class="hero">
     <div class="hero-inner">
-      <svg class="hero-emblem" role="img" aria-label="Seasonのエンブレム"><use href="#emblem"/></svg>
+      <svg class="hero-emblem" viewBox="0 0 200 200" role="img" aria-label="Seasonのエンブレム"><use href="#emblem"/></svg>
       <h1>Season</h1>
       <p class="hero-sub">Teppan Dining Bar</p>
       <p class="hero-copy">四季を、目の前の鉄板で。</p>
@@ -130,19 +156,19 @@
     <div class="rule"></div>
     <div class="cards">
       <article class="card">
-        <svg class="card-icon"><use href="#maple"/></svg>
+        <svg class="card-icon" viewBox="-20 -20 40 40"><use href="#maple"/></svg>
         <h3>飛騨牛</h3>
         <p class="en">Hida Beef</p>
         <p>きめ細かな霜降りと、とろけるような甘み。鉄板でじっくり焼き上げた、至高の一皿。</p>
       </article>
       <article class="card">
-        <svg class="card-icon"><use href="#snow"/></svg>
+        <svg class="card-icon" viewBox="-20 -20 40 40"><use href="#snow"/></svg>
         <h3>旬の魚</h3>
         <p class="en">Seasonal Fish</p>
         <p>その時期いちばんの魚介を、素材の味を活かして香ばしく。</p>
       </article>
       <article class="card">
-        <svg class="card-icon"><use href="#leaf"/></svg>
+        <svg class="card-icon" viewBox="-20 -20 40 40"><use href="#leaf"/></svg>
         <h3>季節の野菜</h3>
         <p class="en">Seasonal Vegetables</p>
         <p>鉄板で甘みを引き出した、彩り豊かな旬の野菜。</p>
@@ -184,7 +210,7 @@
 </main>
 
 <footer class="footer">
-  <svg class="footer-mark"><use href="#emblem"/></svg>
+  <svg class="footer-mark" viewBox="0 0 200 200"><use href="#emblem"/></svg>
   <p class="footer-name">Season</p>
   <p>Teppan Dining Bar</p>
   <small>&copy; Season Teppan Dining Bar</small>
